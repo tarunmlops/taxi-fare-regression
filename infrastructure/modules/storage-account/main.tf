@@ -11,7 +11,7 @@ locals {
 }
 
 resource "azurerm_storage_account" "st" {
-  name                     = "st${local.safe_prefix}${local.safe_postfix}$(local.safe_addfix)${var.env}"
+  name                     = "st1${local.safe_prefix}${local.safe_postfix}$(local.safe_addfix)${var.env}"
   resource_group_name      = var.rg_name
   location                 = var.location
   account_tier             = "Standard"
