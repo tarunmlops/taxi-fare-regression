@@ -7,11 +7,10 @@ data "http" "ip" {
 locals {
   safe_prefix  = replace(var.prefix, "-", "")
   safe_postfix = replace(var.postfix, "-", "")
-  safe_addfix =  "tm"
 }
 
 resource "azurerm_storage_account" "st" {
-  name                     = "st1${local.safe_prefix}${local.safe_postfix}$(local.safe_addfix)${var.env}"
+  name                     = "st${local.safe_prefix}${local.safe_postfix}${var.env}"
   resource_group_name      = var.rg_name
   location                 = var.location
   account_tier             = "Standard"
